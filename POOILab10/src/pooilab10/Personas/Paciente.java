@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author Alumno
  */
-public class Paciente {
+public class Paciente{
     private String dni;
     private String nombre;
     private String apellido;
@@ -77,10 +77,8 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return "Paciente{" + "dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + ", peso=" + peso + ", temperatura=" + temperatura + '}';
+        return "\n"+nombre+" "+apellido+", Su peso : "+peso;
     }
-    
-    
-                    
+                  
     
 }

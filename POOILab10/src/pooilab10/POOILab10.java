@@ -19,7 +19,7 @@ public class POOILab10 {
         
         int opcion;
         do{
-            System.out.println("1. Registrar datos de paciente");
+            System.out.println("\n1. Registrar datos de paciente");
             System.out.println("2, Eliminar los datos de un paciente");
             System.out.println("3. Modificar los datos de un paciente");
             System.out.println("4. Mostrar que peso se repite mas");
@@ -59,7 +59,9 @@ public class POOILab10 {
                     pacientes.pesosRangos();
                     break;
                 case 8:
-                    
+                    pacientes.apellidosAlfa();
+                    break;
+                            
                 case 9:
                     
                 case 10:

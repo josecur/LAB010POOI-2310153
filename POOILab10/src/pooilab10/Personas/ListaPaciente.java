@@ -5,9 +5,11 @@
 package pooilab10.Personas;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -15,6 +17,7 @@ import java.util.Scanner;
  */
 public class ListaPaciente {
     private static final List<Paciente> pacientes = new ArrayList<>();
+    private static final List<Medico> medicos = new ArrayList<>();
     
     Scanner scanner = new Scanner(System.in);
     
@@ -93,7 +96,7 @@ public class ListaPaciente {
                     int cerrar = 0;
                     
                     do{
-                        System.out.println("1. Modificar Nombre");
+                        System.out.println("\n1. Modificar Nombre");
                         System.out.println("2. Modificar Apellido");
                         System.out.println("3. Modificar DNI");
                         System.out.println("4. Modificar Direccion");
@@ -175,24 +178,22 @@ public class ListaPaciente {
     
     public void pesosMAXMIN() {
         double maxpeso = 0;
-        double minpeso = 0;
+        double minpeso = 100;
         
         for(Paciente paciente: pacientes){
             if (maxpeso < paciente.getPeso()){
                 maxpeso = paciente.getPeso();
             }
-            
             if (minpeso > paciente.getPeso()){
                 minpeso = paciente.getPeso();
             }
-            
-            System.out.println("El maximo peso es : " + maxpeso);
-            System.out.println("El minimo peso es : " + minpeso + "\n");
         }
+        System.out.println("\nEl maximo peso es : " + maxpeso);
+        System.out.println("El minimo peso es : " + minpeso + "\n");
     }
     
     public void pesoRepetido(){
-        
+            
     }
     
     public void pesosRangos(){
@@ -219,10 +220,17 @@ public class ListaPaciente {
             }
         }
         
-        System.out.println("La cantidad de personas entre 40 y 60 : " + pesos4060);
+        System.out.println("\nLa cantidad de personas entre 40 y 60 : " + pesos4060);
         System.out.println("La cantidad de personas entre 60 y 80 : " + pesos6080);
         System.out.println("La cantidad de personas entre 80 y 100: " + pesos80100);
-        System.out.println("La cantidad de personas entre 100 y 120 : " + pesos100120);
+        System.out.println("La cantidad de personas entre 100 y 120 : " + pesos100120 + "\n");
+    }
+    
+    public void apellidosAlfa() {
+        Collections.sort(pacientes,Comparator.comparing(Paciente::getApellido));
+        for(Paciente paciente : pacientes){
+            System.out.println(paciente.toString());
+        }
     }
     
     
